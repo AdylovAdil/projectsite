@@ -158,15 +158,19 @@
             <h6 class="text-uppercase text-body m-0">Car Listing</h6>
         </div>
     </div>
+    <!-- Page Header Start -->
 
+
+    <!-- Rent A Car Start -->
     <div class="container-fluid py-5">
         <div class="container pt-5 pb-3">
             <h1 class="display-4 text-uppercase text-center mb-5">Find Your Car</h1>
             <div class="row">
+                <!-- Начало цикла -->
                 <div class="col-lg-4 col-md-6 mb-2" th:each="car : ${cars}">
                     <a th:href="@{'/pages/detail/' + ${car.id}}" class="text-decoration-none">
                         <div class="rent-item custom-box mb-4">
-
+                            <!-- Отображение изображения -->
                             <img class="img-fluid mb-4" th:src="@{${car.fonImage}}" alt="Car Image">
 
                             <!-- Название машины -->
@@ -184,20 +188,23 @@
                                 </div>
                                 <div class="px-2">
                                     <i class="fa fa-road text-primary mr-1"></i>
-                                    <span th:text="${car.mileage} + 'K'" ></span>
+                                    <span th:text="${car.mileage} + 'K'" ></span> <!-- Замените на свойство пробега, если есть -->
                                 </div>
                             </div>
 
+                            <!-- Цена -->
                             <a class="btn btn-primary px-3" th:text="'$' + ${car.price} + '/Day'" th:href="@{'/pages/booking/' + ${car.id}}"></a>
                         </div>
                     </a>
                 </div>
-
+                <!-- Конец цикла -->
             </div>
         </div>
     </div>
+    <!-- Rent A Car End -->
 
 
+    <!-- Banner Start -->
     <div class="container-fluid py-5">
         <div class="container py-5">
             <div class="row mx-0">
@@ -224,8 +231,10 @@
             </div>
         </div>
     </div>
+    <!-- Banner End -->
 
 
+    <!-- Vendor Start -->
     <div class="container-fluid py-5">
         <div class="container py-5">
             <div class="owl-carousel vendor-carousel">
@@ -256,8 +265,10 @@
             </div>
         </div>
     </div>
+    <!-- Vendor End -->
 
 
+    <!-- Footer Start -->
     <div class="container-fluid bg-secondary py-5 px-sm-3 px-md-5" style="margin-top: 90px;">
         <div class="row pt-5">
             <div class="col-lg-3 col-md-6 mb-5">
@@ -326,10 +337,14 @@
         <p class="mb-2 text-center text-body">&copy; <a href="#">Your Site Name</a>. All Rights Reserved.</p>
         <p class="m-0 text-center text-body">Designed by <a href="https://htmlcodex.com">HTML Codex</a></p>
     </div>
+    <!-- Footer End -->
 
+
+    <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
 
 
+    <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script th:src="@{/lib/easing/easing.min.js}"></script>
@@ -339,6 +354,7 @@
     <script th:src="@{/lib/tempusdominus/js/moment-timezone.min.js}"></script>
     <script th:src="@{/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js}"></script>
 
+    <!-- Template Javascript -->
     <script th:src="@{/js/main.js}"></script>
 </body>
 
